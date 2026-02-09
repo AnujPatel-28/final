@@ -23,4 +23,25 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  --color-primary: #0f172a; /* Slate 900 */
+}
+
+@keyframes shine {
+  from {
+    background-position: 100% center;
+  }
+  to {
+    background-position: 44% center;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(110deg, var(--color-primary) 0%, var(--color-primary) 40%, #6c3bff 48%, #6c3bff 50%, #6c3bff 52%, var(--color-primary) 60%, var(--color-primary) 100%);
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 100% center;
+  color: transparent;
+  animation: shine 5s ease-in-out forwards;
 }

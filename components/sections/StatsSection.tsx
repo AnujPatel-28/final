@@ -11,7 +11,7 @@ interface StatItem {
   value: number;
   suffix: string;
   // We use ReactElement to allow us to clone it later with new props (className)
-  icon: ReactElement; 
+  icon: ReactElement;
 }
 
 interface CounterProps {
@@ -95,7 +95,7 @@ const Counter: React.FC<CounterProps> = ({ end, duration = 2000, suffix = "" }) 
       // Ease-out logic: 1 - (1 - x)^3
       const percentage = Math.min(progress / duration, 1);
       const easeOut = 1 - Math.pow(1 - percentage, 3);
-      
+
       setCount(Math.floor(easeOut * end));
 
       if (progress < duration) {
@@ -121,32 +121,32 @@ const Counter: React.FC<CounterProps> = ({ end, duration = 2000, suffix = "" }) 
 
 const StatsSection: React.FC = () => {
   return (
-    <section className="bg-blue-900 py-16 text-white relative overflow-hidden">
+    <section className="bg-white/50 backdrop-blur-sm border-y border-blue-100 py-16 relative overflow-hidden">
       {/* Optional: Subtle background pattern could go here */}
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-blue-800/50">
-          
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-blue-200">
+
           {stats.map((stat) => (
             <div key={stat.id} className="flex flex-col items-center p-4">
-              
+
               {/* Icon Bubble */}
-              <div className="mb-4 bg-white/10 p-3 rounded-full backdrop-blur-sm shadow-inner ring-1 ring-white/20">
+              <div className="mb-4 bg-blue-50 p-3 rounded-full shadow-sm ring-1 ring-blue-100">
                 {/* React.cloneElement allows us to inject the className into the icon 
                   defined in the config object without repeating the className string there.
                 */}
-                {React.cloneElement(stat.icon, { 
-                  className: "w-6 h-6 text-blue-200" 
+                {React.cloneElement(stat.icon, {
+                  className: "w-6 h-6 text-blue-600"
                 } as React.SVGProps<SVGSVGElement>)}
               </div>
 
               {/* Animated Number */}
-              <div className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2 text-white">
+              <div className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2 text-[#262F40]">
                 <Counter end={stat.value} suffix={stat.suffix} />
               </div>
 
               {/* Label */}
-              <p className="text-blue-200 text-sm md:text-base font-medium uppercase tracking-wide">
+              <p className="text-slate-500 text-sm md:text-base font-medium uppercase tracking-wide">
                 {stat.label}
               </p>
             </div>

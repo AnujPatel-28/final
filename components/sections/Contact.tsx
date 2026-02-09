@@ -13,14 +13,14 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white relative overflow-hidden">
+    <section id="contact" className="py-24 bg-transparent relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-purple-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
+
           {/* Left Column: Contact Info & Value Prop */}
           <div>
             <h2 className="text-blue-600 font-semibold tracking-wide uppercase text-sm mb-2">
@@ -42,7 +42,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-gray-900">Headquarters</h4>
-                  <p className="text-gray-600">123 Business Park, Sector 5<br/>Tech City, State, 500081</p>
+                  <p className="text-gray-600">123 Business Park, Sector 5<br />Tech City, State, 500081</p>
                 </div>
               </div>
 
@@ -85,26 +85,24 @@ const ContactSection: React.FC = () => {
 
           {/* Right Column: Interactive Form */}
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10">
-            
+
             {/* Toggle Switch */}
             <div className="bg-gray-100 p-1 rounded-lg flex mb-8">
               <button
                 onClick={() => setUserType("client")}
-                className={`flex-1 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 ${
-                  userType === "client"
+                className={`flex-1 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 ${userType === "client"
                     ? "bg-white text-blue-600 shadow-sm"
                     : "text-gray-500 hover:text-gray-700"
-                }`}
+                  }`}
               >
                 I'm Hiring Talent
               </button>
               <button
                 onClick={() => setUserType("candidate")}
-                className={`flex-1 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 ${
-                  userType === "candidate"
+                className={`flex-1 py-2.5 text-sm font-semibold rounded-md transition-all duration-200 ${userType === "candidate"
                     ? "bg-white text-blue-600 shadow-sm"
                     : "text-gray-500 hover:text-gray-700"
-                }`}
+                  }`}
               >
                 I'm Looking for a Job
               </button>
@@ -165,9 +163,9 @@ const ContactSection: React.FC = () => {
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
                   placeholder={
-                    userType === "client" 
-                    ? "We are looking for a Senior React Developer..." 
-                    : "I am interested in remote opportunities in..."
+                    userType === "client"
+                      ? "We are looking for a Senior React Developer..."
+                      : "I am interested in remote opportunities in..."
                   }
                   required
                 ></textarea>
@@ -180,7 +178,7 @@ const ContactSection: React.FC = () => {
                 Send Message
                 <Send className="w-4 h-4" />
               </button>
-              
+
               <p className="text-center text-xs text-gray-500 mt-4">
                 By sending this form, you agree to our Terms & Privacy Policy.
               </p>

@@ -24,28 +24,28 @@ const features = [
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-white overflow-hidden">
+    <section id="about" className="py-20 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
+
           {/* Left Column: Image Composition */}
           <div className="relative order-2 lg:order-1">
             {/* Background Decorator (The 'Mesh' element) */}
             <div className="absolute -top-4 -left-4 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
             <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            
+
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               {/* Placeholder Image - Replace with a real office/team photo */}
               <div className="aspect-[4/3] bg-gray-200 relative">
-                 <Image 
-                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                   alt="TalentMesh Team collaborating"
-                   fill
-                   className="object-cover"
-                 />
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="TalentMesh Team collaborating"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              
+
               {/* Floating Badge */}
               <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 max-w-xs">
                 <div className="flex items-center gap-3">
@@ -67,12 +67,12 @@ const AboutSection: React.FC = () => {
               About TalentMesh
             </h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              Bridging the Gap Between <br/>
+              Bridging the Gap Between <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                 Potential & Opportunity
               </span>
             </h3>
-            
+
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               At TalentMesh Solutions, we believe that a resume tells a story, but not the whole story. We are a new-age recruitment firm dedicated to finding the perfect alignment between candidate aspirations and company missions.
             </p>

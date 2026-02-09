@@ -4,58 +4,99 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const SuperGlowUp = () => {
-  // 1. Target the container to measure vertical scroll progress
   const targetRef = useRef<HTMLDivElement>(null);
-
-  // 2. Track the scroll progress of this specific container
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start end', 'end start'],
+    offset: ['start start', 'end end'],
   });
 
-  // 3. Map scroll progress to visual changes
-  
-  // Opacity of the blue glow: Starts at 0, peaks at 1 in the middle, fades out at the end
-  const opacity = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0, 1, 0]);
-  
-  // Scale of the blue glow: Starts small, expands to fill screen
-  const scale = useTransform(scrollYProgress, [0.2, 0.5], [0.8, 1.5]);
+  // --- ANIMATION CONFIG ---
 
-  // Text movement: Slight parallax effect
-  const yText = useTransform(scrollYProgress, [0.3, 0.7], [50, -50]);
-  const opacityText = useTransform(scrollYProgress, [0.2, 0.4, 0.6, 0.8], [0, 1, 1, 0]);
+  // 1. TEXT 1 ("Noisy")
+  const op1 = useTransform(scrollYProgress, [0.05, 0.2], [0, 1]);
+  const y1 = useTransform(scrollYProgress, [0.05, 0.4], [0, -200]);
+  // Base Text: Slate -> White
+  const col1 = useTransform(scrollYProgress, [0.75, 0.85], ["#1e293b", "#ffffff"]);
+  // Highlight ("noisy"): Blue -> White
+  const col1Highlight = useTransform(scrollYProgress, [0.75, 0.85], ["#044396", "#ffffff"]);
+
+  // 2. TEXT 2 ("Smarter Bridge")
+  const op2 = useTransform(scrollYProgress, [0.3, 0.45], [0, 1]);
+  const y2 = useTransform(scrollYProgress, [0.3, 0.6], [50, -100]);
+  // Base Text: Slate -> White
+  const col2 = useTransform(scrollYProgress, [0.65, 0.75], ["#1e293b", "#ffffff"]);
+  // Highlight ("smarter bridge"): Blue -> White
+  const col2Highlight = useTransform(scrollYProgress, [0.65, 0.75], ["#044396", "#ffffff"]);
+
+  // 3. TEXT 3 ("TalentMesh")
+  const op3 = useTransform(scrollYProgress, [0.65, 0.8], [0, 1]);
+  const y3 = useTransform(scrollYProgress, [0.65, 0.8], [100, 0]);
+  const scale3 = useTransform(scrollYProgress, [0.65, 0.9], [0.9, 1.1]);
+  // Main Title: Transitions to #1e293b (Dark Slate) at the end
+  const col3 = useTransform(scrollYProgress, [0.65, 0.8], ["#1e293b", "#ffffffde"]);
+
+
+  // 4. RISING BLUE GRADIENT BACKGROUND
+  const bgHeight = useTransform(scrollYProgress, [0.4, 0.9], ["0%", "100%"]);
+  const bgRound = useTransform(scrollYProgress, [0.4, 0.9], ["50% 50% 0 0", "0% 0% 0 0"]);
+
 
   return (
-    <section 
-      ref={targetRef} 
-      className="relative h-[300vh] bg-black" // 300vh height gives us 'scroll room' to play the animation
+    <section
+      ref={targetRef}
+      className="relative h-[300vh] bg-transparent"
     >
-      {/* Sticky Container: Keeps content in view while we scroll through the 300vh */}
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
-        
-        {/* BACKGROUND LAYER 1: Base Dark Background */}
-        <div className="absolute inset-0 bg-neutral-950" />
 
-        {/* BACKGROUND LAYER 2: The Blue Glow */}
+        {/* RISING GRADIENT LAYER */}
         <motion.div
-          style={{ opacity, scale }}
-          className="absolute inset-0 z-0 flex items-center justify-center"
-        >
-          {/* This radial gradient mimics the specific Supermemory glow */}
-          <div className="h-[60vh] w-[60vw] rounded-full bg-blue-600 blur-[120px]" />
-        </motion.div>
+          style={{ height: bgHeight, borderRadius: bgRound }}
+          className="absolute bottom-0 left-0 right-0 z-0 bg-gradient-to-b from-blue-100 to-indigo-900 shadow-[0_-20px_60px_-15px_rgba(37,99,235,0.5)]"
+        />
 
-        {/* CONTENT LAYER */}
-        <div className="relative z-10 px-4 text-center">
-          <motion.div style={{ y: yText, opacity: opacityText }}>
-            <h2 className="text-4xl font-bold tracking-tight text-white md:text-7xl">
-              supermemory <br />
-              <span className="text-blue-100/80">makes your AI agent</span>
+        {/* CONTAINER FOR STACKED TEXT */}
+        <div className="mt-20 relative z-10 w-full max-w-4xl px-4 flex flex-col items-center justify-center h-full">
+
+          {/* TEXT 1: TOP STACK */}
+          <motion.div
+            style={{ opacity: op1, y: y1, color: col1 }}
+            className="absolute text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
+              The job market is <motion.span style={{ color: col1Highlight }}>noisy.</motion.span>
             </h2>
-            <h1 className="mt-4 text-6xl font-extrabold text-white md:text-9xl tracking-tighter">
-              Unforgettable
-            </h1>
           </motion.div>
+
+          {/* TEXT 2: MIDDLE STACK */}
+          <motion.div
+            style={{ opacity: op2, y: y2, color: col2 }}
+            className="absolute text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
+              You need a <motion.span style={{ color: col2Highlight }}>smarter bridge.</motion.span>
+            </h2>
+          </motion.div>
+
+          {/* TEXT 3: HERO REVEAL */}
+          <motion.div
+            style={{ opacity: op3, y: y3, scale: scale3 }}
+            className="absolute text-center pt-24"
+          >
+            <motion.h1
+              style={{ color: col3 }}
+              className="mt-7 text-6xl md:text-9xl font-black tracking-tighter drop-shadow-2xl"
+            >
+              TalentMesh
+            </motion.h1>
+
+            <motion.p
+              style={{ color: col3 }}
+              className="text-xl md:text-2xl font-light mt-4 max-w-2xl mx-auto leading-relaxed"
+            >
+              Find your dream job with <b className="font-bold">AI Recruiting</b> that actually works.
+            </motion.p>
+          </motion.div>
+
         </div>
       </div>
     </section>

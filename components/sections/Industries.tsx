@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { 
-  Code2, 
-  Stethoscope, 
-  Building2, 
-  Cpu, 
-  TrendingUp, 
+import {
+  Code2,
+  Stethoscope,
+  Building2,
+  Cpu,
+  TrendingUp,
   Megaphone,
   Briefcase,
   Globe,
@@ -49,9 +49,9 @@ const industries = [
 
 const IndustriesSection = () => {
   return (
-    <section className="py-20 bg-gray-50" id="industries">
+    <section className="py-20 bg-transparent" id="industries">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-blue-600 font-semibold tracking-wide uppercase text-sm mb-2">
@@ -76,23 +76,23 @@ const IndustriesSection = () => {
               <div className="mb-6 p-4 bg-gray-50 rounded-full w-fit group-hover:bg-blue-50 transition-colors duration-300">
                 {industry.icon}
               </div>
-              
+
               <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                 {industry.title}
               </h4>
-              
+
               <p className="text-gray-600 leading-relaxed">
                 {industry.description}
               </p>
             </div>
           ))}
         </div>
-        
+
         {/* Bottom CTA (Optional) */}
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-4">Don't see your industry listed?</p>
           <button className="text-blue-600 font-semibold hover:text-blue-800 flex items-center justify-center gap-2 mx-auto transition-colors">
-            Contact us for custom solutions 
+            Contact us for custom solutions
             <span aria-hidden="true">&rarr;</span>
           </button>
         </div>

@@ -59,9 +59,9 @@ const blogPosts: BlogPost[] = [
 
 const InsightsSection: React.FC = () => {
   return (
-    <section id="insights" className="py-20 bg-gray-50">
+    <section id="insights" className="py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div className="max-w-2xl">
@@ -76,8 +76,8 @@ const InsightsSection: React.FC = () => {
             </p>
           </div>
 
-          <Link 
-            href="/blog" 
+          <Link
+            href="/blog"
             className="hidden md:flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors group"
           >
             View all articles
@@ -88,8 +88,8 @@ const InsightsSection: React.FC = () => {
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <article 
-              key={post.id} 
+            <article
+              key={post.id}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100"
             >
               {/* Image Container */}
@@ -125,7 +125,7 @@ const InsightsSection: React.FC = () => {
                     {post.title}
                   </Link>
                 </h4>
-                
+
                 <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
                   {post.excerpt}
                 </p>
@@ -134,12 +134,12 @@ const InsightsSection: React.FC = () => {
                 <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                       <User className="w-4 h-4 text-gray-500" />
+                      <User className="w-4 h-4 text-gray-500" />
                     </div>
                     <span className="text-sm font-medium text-gray-700">{post.author}</span>
                   </div>
-                  
-                  <Link 
+
+                  <Link
                     href={`/blog/${post.slug}`}
                     className="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all"
                   >
@@ -154,8 +154,8 @@ const InsightsSection: React.FC = () => {
 
         {/* Mobile View All Button (Only visible on small screens) */}
         <div className="mt-10 text-center md:hidden">
-           <Link 
-            href="/blog" 
+          <Link
+            href="/blog"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 rounded-full text-gray-700 font-medium hover:bg-gray-50 transition-colors"
           >
             View all articles
