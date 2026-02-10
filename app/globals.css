@@ -36,7 +36,7 @@ body {
 }
 
 .animate-shimmer {
-  background: linear-gradient(110deg, var(--color-primary) 0%, var(--color-primary) 40%, #6c3bff 48%, #6c3bff 50%, #6c3bff 52%, var(--color-primary) 60%, var(--color-primary) 100%);
+  background: linear-gradient(110deg, var(--color-primary) 0%, var(--color-primary) 40%, #0f172a 48%, #0f172a 50%, #0f172a 52%, var(--color-primary) 60%, var(--color-primary) 100%);
   background-size: 400% 100%;
   background-clip: text;
   -webkit-background-clip: text;

@@ -121,7 +121,7 @@ const Counter: React.FC<CounterProps> = ({ end, duration = 2000, suffix = "" }) 
 
 const StatsSection: React.FC = () => {
   return (
-    <section className="bg-white/50 backdrop-blur-sm border-y border-blue-100 py-16 relative overflow-hidden">
+    <section className="bg-[#044396]/50 backdrop-blur-sm border-y border-blue-100 py-16 relative overflow-hidden">
       {/* Optional: Subtle background pattern could go here */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

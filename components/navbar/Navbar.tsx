@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { BrainCircuit, Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -32,8 +33,13 @@ const Navbar = () => {
 
             {/* Logo + Name */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className={`p-2 rounded-full transition-colors ${isScrolled ? 'bg-blue-600/10 group-hover:bg-blue-600/20' : 'bg-white/50 group-hover:bg-white/80'}`}>
-                <BrainCircuit className="w-6 h-6 text-blue-600" />
+              <div className={`relative w-10 h-10 p-1 rounded-full transition-colors ${isScrolled ? 'bg-blue-600/10 group-hover:bg-blue-600/20' : 'bg-white/50 group-hover:bg-white/80'}`}>
+                <Image
+                  src="/logo1.svg"
+                  alt="TalentMesh Logo"
+                  fill
+                  className="object-contain p-1"
+                />
               </div>
               <span className="font-bold text-xl text-slate-800 tracking-tight">TalentMesh</span>
             </Link>

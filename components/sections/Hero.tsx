@@ -62,7 +62,7 @@ export default function HeroContextSection() {
               </motion.span>
               <motion.span
                 className="block animate-shimmer"
-                style={{ '--color-primary': '#334155' } as React.CSSProperties}
+                style={{ '--color-primary': '#044396' } as React.CSSProperties}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -111,7 +111,7 @@ export default function HeroContextSection() {
             <div className="relative h-full min-h-[500px] rounded-3xl border border-white/60 bg-white/40 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden group transition-all duration-500 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)]">
 
               {/* Inner Gradient Highlight - Subtle */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 via-transparent to-purple-100/30 opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 via-transparent to-blue-400/30 opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Card Content */}
               <div className="absolute inset-0 p-8 flex flex-col">
@@ -136,7 +136,7 @@ export default function HeroContextSection() {
 
             {/* Decorative Elements behind Bento */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/30 rounded-full blur-[60px] -z-10" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/30 rounded-full blur-[60px] -z-10" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-[60px] -z-10" />
 
           </motion.div>
 

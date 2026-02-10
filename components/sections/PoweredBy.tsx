@@ -20,7 +20,7 @@ export default function PoweredBy() {
                         transition={{ duration: 0.6 }}
                         className="text-3xl font-bold tracking-tight md:text-5xl text-[#262F40]"
                     >
-                        Built on a foundation of fast, production-grade tooling
+                        Built on a foundation of precision-driven talent acquisition
                     </motion.h2>
                 </div>
 
@@ -33,7 +33,7 @@ export default function PoweredBy() {
                     </div>
 
                     {/* 2. WIRES (SVG Layer) */}
-                    <div className="absolute top-[60px] left-0 h-[150px] w-full hidden md:block pointer-events-none z-10">
+                    <div className="absolute top-[95px] left-0 h-[300px] w-full hidden md:block pointer-events-none z-10">
                         <CircuitLines />
                     </div>
 
@@ -46,8 +46,8 @@ export default function PoweredBy() {
                                     <Atom className="h-8 w-8 text-blue-600" />
                                 </motion.div>
                             }
-                            title="React"
-                            description="The library for web and native user interfaces. Next.js is built on the latest React features, including Server Components and Actions."
+                            title="Strategic Sourcing"
+                            description="The cornerstone of high-performance teams. Talent Mesh identifies top-tier talent through a global network, focusing on deep technical expertise and long-term cultural alignment."
                             delay={0.2}
                             gradient="from-blue-50/80 to-white/50"
                             borderColor="border-blue-200"
@@ -59,9 +59,8 @@ export default function PoweredBy() {
                                     <Box className="h-8 w-8 text-purple-600" />
                                 </motion.div>
                             }
-                            title="Turbopack"
-                            description="An incremental bundler optimized for JavaScript and TypeScript, written in Rust, and built into Next.js."
-                            delay={0.4}
+                            title="Intelligent Matching"
+                            description="A data-driven vetting process optimized for speed and accuracy. We utilize advanced assessment frameworks to filter for the highest caliber of candidates, integrated into your specific workflow."
                             gradient="from-purple-50/80 to-white/50"
                             borderColor="border-purple-200"
                         />
@@ -72,8 +71,8 @@ export default function PoweredBy() {
                                     <Wind className="h-8 w-8 text-orange-600" />
                                 </motion.div>
                             }
-                            title="Speedy Web Compiler"
-                            description="An extensible Rust based platform for the next generation of fast developer tools, and can be used for both compilation and minification."
+                            title="High-Velocity Placement"
+                            description="An agile recruitment platform for the next generation of business growth. Our streamlined methodology ensures rapid talent acquisition and seamless onboarding for specialized roles."
                             delay={0.6}
                             gradient="from-orange-50/80 to-white/50"
                             borderColor="border-orange-200"
@@ -106,7 +105,7 @@ function Chip() {
 
                 {/* Text */}
                 <div className="relative z-10 flex items-center gap-2">
-                    <span className="text-lg font-semibold text-slate-600">Powered By</span>
+                    <span className="text-lg font-semibold text-slate-600">Talent Mesh</span>
                 </div>
 
                 {/* Pins */}
@@ -127,7 +126,7 @@ function Chip() {
 
 function CircuitLines() {
     return (
-        <svg className="w-full h-full" viewBox="0 0 1000 150" preserveAspectRatio="none">
+        <svg className="w-full h-full" viewBox="0 0 1000 300" preserveAspectRatio="none">
             <defs>
                 <linearGradient id="trace-blue" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#3b82f6" stopOpacity="0" />
@@ -137,30 +136,35 @@ function CircuitLines() {
                 <linearGradient id="trace-gray" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#161224ff" stopOpacity="0" />
                     <stop offset="50%" stopColor="#161224ff" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#161224ff" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#3339eaff" stopOpacity="0.5" />
                 </linearGradient>
                 <linearGradient id="trace-orange" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#f97316" stopOpacity="0" />
                     <stop offset="50%" stopColor="#f97316" stopOpacity="0.5" />
                     <stop offset="100%" stopColor="#fbbf24" stopOpacity="0.5" />
                 </linearGradient>
+                <linearGradient id="trace-purple" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#5b33eaff" stopOpacity="0" />
+                    <stop offset="50%" stopColor="#3339eaff" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#3339eaff" stopOpacity="0.5" />
+                </linearGradient>
             </defs>
 
             <CircuitPath
-                d="M 450 0 L 400 0 L 400 50 L 200 50 L 200 150"
+                d="M 450 0 L 400 0 L 400 70 L 200 70 L 200 260"
                 stroke="url(#trace-blue)"
             />
 
             <CircuitPath
-                d="M 500 0 L 500 150"
-                stroke="url(#trace-gray)"
-                delay={0.2}
+                d="M 500 0 L 500 20 L 520 20 L 520 230"
+                stroke="url(#trace-purple)"
+                delay={0.15}
             />
 
             <CircuitPath
-                d="M 550 0 L 600 0 L 600 50 L 800 50 L 800 150"
+                d="M 550 0 L 600 0 L 600 70 L 800 70 L 800 260"
                 stroke="url(#trace-orange)"
-                delay={0.4}
+                delay={0.3}
             />
         </svg>
     )
@@ -173,7 +177,7 @@ function CircuitPath({ d, stroke, delay = 0 }: { d: string, stroke: string, dela
             <motion.path
                 d={d}
                 stroke={stroke}
-                strokeWidth="2"
+                strokeWidth="2.5"
                 fill="none"
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
