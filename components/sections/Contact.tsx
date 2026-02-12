@@ -77,9 +77,9 @@ const ContactSection = () => {
 
             <div className="space-y-8 md:space-y-12">
               {[
-                { icon: MapPin, title: "Headquarters", info: "Global Operations Center" },
-                { icon: Envelope, title: "Email Us", info: "hello@talentmesh.ai" },
-                { icon: PhoneCall, title: "Call Us", info: "+1 (888) MESH-HQ" }
+                { icon: MapPin, title: "Headquarters", info: "Ahmedabad-380014" },
+                { icon: Envelope, title: "Email Us", info: "hr@talentmeshsolutions.com" },
+                { icon: PhoneCall, title: "Call Us", info: "+91 9898161106" }
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col md:flex-row items-center gap-6 md:gap-8 group">
                   <div className="p-6 bg-slate-50 rounded-3xl text-slate-400 group-hover:bg-slate-900 group-hover:text-white transition-all duration-700 border border-slate-100">
@@ -87,7 +87,16 @@ const ContactSection = () => {
                   </div>
                   <div className="text-center md:text-left">
                     <h4 className="text-xs font-mono font-black text-slate-400 uppercase tracking-[0.2em] mb-1">{item.title}</h4>
-                    <p className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight group-hover:text-slate-600 transition-colors duration-500">{item.info}</p>
+                    {item.title === "Email Us" ? (
+                      <a
+                        href={`mailto:${item.info}`}
+                        className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight hover:text-[#044396] transition-colors duration-500 cursor-pointer"
+                      >
+                        {item.info}
+                      </a>
+                    ) : (
+                      <p className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight group-hover:text-slate-600 transition-colors duration-500">{item.info}</p>
+                    )}
                   </div>
                 </div>
               ))}
