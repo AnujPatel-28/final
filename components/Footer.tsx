@@ -165,10 +165,12 @@ const Footer = () => {
                                     className="w-full bg-white rounded-3xl py-5 md:py-7 pl-16 pr-8 text-sm font-bold font-mono border border-zinc-100 outline-none focus:border-[#044396] transition-all shadow-sm"
                                 />
                             </div>
-                            <button className="w-full bg-slate-900 text-white py-5 md:py-7 rounded-3xl text-[10px] md:text-[11px] font-black font-mono uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-[#044396] transition-all shadow-xl hover:shadow-[#044396]/20">
-                                Initialize Connection
-                                <ArrowRight weight="bold" />
-                            </button>
+                            <Link href="/under-construction" className="w-full">
+                                <button className="w-full bg-slate-900 text-white py-5 md:py-7 rounded-3xl text-[10px] md:text-[11px] font-black font-mono uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-[#044396] transition-all shadow-xl hover:shadow-[#044396]/20">
+                                    Initialize Connection
+                                    <ArrowRight weight="bold" />
+                                </button>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>
@@ -178,7 +180,7 @@ const Footer = () => {
                     <div className="lg:col-span-1 space-y-8 md:space-y-12 order-last lg:order-first mt-8 lg:mt-0">
                         <div className="flex items-center gap-4">
                             {[InstagramLogo, LinkedinLogo, TwitterLogo, GithubLogo].map((Icon, idx) => (
-                                <Link key={idx} href="#" className="w-14 h-14 flex items-center justify-center bg-zinc-50 rounded-2xl text-slate-400 hover:bg-slate-900 hover:text-white transition-all duration-500 hover:-translate-y-2 border border-zinc-100 shadow-sm">
+                                <Link key={idx} href="/under-construction" className="w-14 h-14 flex items-center justify-center bg-zinc-50 rounded-2xl text-slate-400 hover:bg-slate-900 hover:text-white transition-all duration-500 hover:-translate-y-2 border border-zinc-100 shadow-sm">
                                     <Icon size={24} weight="bold" />
                                 </Link>
                             ))}
@@ -210,10 +212,10 @@ const Footer = () => {
                         </div>
                     ))}
                 </div>
-
+                e
                 {/* Bottom Section: Dashboard Meta */}
-                <div className="pt-12 md:pt-16 border-t border-zinc-100 flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-12">
-                    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+                <div className="pt-12 md:pt-16 border-t border-zinc-100 flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12">
+                    <div className="flex flex-col md:flex-row items-center">
                         {/* Trusted Partner Badge - Hidden for now, can be re-enabled */}
                         {/* <div className="flex items-center gap-4 bg-zinc-50 px-6 py-2.5 rounded-full border border-zinc-100">
                             <div className="w-4 h-4 rounded-full bg-slate-900 flex items-center justify-center">
@@ -221,24 +223,9 @@ const Footer = () => {
                             </div>
                             <span className="text-[10px] font-black font-mono text-slate-900 uppercase tracking-widest">Trusted Partner Since 2024</span>
                         </div> */}
-                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                        <p className="text-[15px] font-bold text-slate-400 uppercase tracking-widest">
                             &copy; {currentYear} TalentMesh Solutions. Global Staffing & Consulting.
                         </p>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                        <div className="flex gap-6 md:gap-10">
-                            {["Mission Control", "Data Ethics", "Neural Terminal"].map((item) => (
-                                <Link key={item} href="#" className="text-[10px] font-black font-mono text-slate-400 uppercase tracking-widest hover:text-slate-900 transition-colors relative group">
-                                    {item}
-                                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-slate-900 transition-all group-hover:w-full" />
-                                </Link>
-                            ))}
-                        </div>
-                        <div className="flex items-center gap-3 md:ml-4 bg-zinc-50 px-5 py-2.5 rounded-full border border-zinc-100 shadow-inner">
-                            <Globe size={16} className="text-[#044396]" />
-                            <span className="text-[10px] font-black font-mono text-slate-900 uppercase tracking-widest">Global Node</span>
-                        </div>
                     </div>
                 </div>
             </div>

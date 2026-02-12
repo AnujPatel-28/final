@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import React from "react";
 import Image from "next/image";
 import {
@@ -15,17 +16,17 @@ const features = [
   {
     title: "Precision Matching",
     description: "We don't just match keywords. We match culture, vision, and long-term potential.",
-    icon: <Target size={24} weight="fill" className="text-[#044396]" />,
+    icon: <Target size={24} weight="fill" />,
   },
   {
     title: "Human-Centric Approach",
     description: "Technology aids us, but humans drive us. We build relationships, not databases.",
-    icon: <Users size={24} weight="fill" className="text-[#044396]" />,
+    icon: <Users size={24} weight="fill" />,
   },
   {
     title: "Rapid Turnaround",
     description: "Time is money. Our agile process ensures you get top talent without the wait.",
-    icon: <Lightning size={24} weight="fill" className="text-[#044396]" />,
+    icon: <Lightning size={24} weight="fill" />,
   },
 ];
 
@@ -118,7 +119,7 @@ const AboutSection: React.FC = () => {
                 >
                   <div className="flex-shrink-0 w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center group-hover:bg-[#044396] transition-all duration-500 shadow-inner group-hover:shadow-lg">
                     <div className="text-[#044396] group-hover:text-white transition-colors duration-300">
-                      {item.icon}
+                      {React.cloneElement(item.icon as React.ReactElement<any>, { className: "transition-colors duration-300" })}
                     </div>
                   </div>
                   <div>
@@ -129,14 +130,16 @@ const AboutSection: React.FC = () => {
               ))}
             </div>
 
-            <motion.button
-              whileHover={{ x: 10 }}
-              className="inline-flex items-center gap-4 text-[#044396] font-bold font-mono text-sm uppercase tracking-[0.2em] group hover:text-blue-700 transition-colors"
-            >
-              System Overview
-              <div className="w-12 h-0.5 bg-[#044396] group-hover:w-20 transition-all duration-500 group-hover:bg-blue-700" />
-              <ArrowRight size={20} weight="bold" />
-            </motion.button>
+            <Link href="/under-construction">
+              <motion.button
+                whileHover={{ x: 10 }}
+                className="inline-flex items-center gap-4 text-[#044396] font-bold font-mono text-sm uppercase tracking-[0.2em] group hover:text-blue-700 transition-colors"
+              >
+                System Overview
+                <div className="w-12 h-0.5 bg-[#044396] group-hover:w-20 transition-all duration-500 group-hover:bg-blue-700" />
+                <ArrowRight size={20} weight="bold" />
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from 'react';
+import Link from 'next/link';
 import {
   Database,
   BookOpen,
@@ -84,14 +85,16 @@ export default function IntegrationsSection() {
               A deeply integrated approach bridging the gap between talent and opportunity. We orchestrate complex workflows for <span className="text-slate-900 font-bold underline decoration-[#044396] decoration-4 underline-offset-8">Targeted Sourcing</span> & <span className="text-slate-900 font-bold underline decoration-[#044396] decoration-4 underline-offset-8">Career Trajectories</span>.
             </p>
 
-            <motion.button
-              whileHover={{ y: -5, scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-14 py-7 rounded-3xl bg-[#000000] text-white font-black text-xs uppercase tracking-[0.3em] transition-all shadow-2xl hover:bg-[#044396] flex items-center gap-4"
-            >
-              View Our Process
-              <CaretRight size={18} weight="bold" />
-            </motion.button>
+            <Link href="/under-construction">
+              <motion.button
+                whileHover={{ y: -5, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-14 py-7 rounded-3xl bg-[#000000] text-white font-black text-xs uppercase tracking-[0.3em] transition-all shadow-2xl hover:bg-[#044396] flex items-center gap-4"
+              >
+                View Our Process
+                <CaretRight size={18} weight="bold" />
+              </motion.button>
+            </Link>
           </motion.div>
 
         </div>
@@ -106,7 +109,7 @@ const IntegrationGraph = () => {
       {/* Central Identity */}
       <div className="relative z-20 flex h-48 w-48 items-center justify-center rounded-[4rem] bg-white text-[#044396] shadow-[0_30px_60px_rgba(0,0,0,0.15)] border border-zinc-100">
         <img
-          src="/logo-removebg-preview.png"
+          src="/TalentMesh_Logo-removebg-preview.png"
           alt="TalentMesh Hub"
           className="w-32 h-auto object-contain relative z-20"
         />

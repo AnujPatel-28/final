@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from 'next/link';
 import {
   Code,
   Heartbeat,
@@ -17,32 +18,32 @@ const industries = [
   {
     title: "Software Engineering",
     description: "Firms: Sourcing elite developers. Talent: Accessing top-tier tech roles.",
-    icon: <Code size={36} weight="duotone" className="text-[#044396]" />,
+    icon: <Code size={36} weight="duotone" />,
   },
   {
     title: "HealthTech & Bio",
     description: "Firms: Specialist acquisition. Talent: Bridging scientific innovations.",
-    icon: <Heartbeat size={36} weight="duotone" className="text-[#044396]" />,
+    icon: <Heartbeat size={36} weight="duotone" />,
   },
   {
     title: "FinTech & Capital",
     description: "Firms: Staffing financial leaders. Talent: Scaling capital market careers.",
-    icon: <Graph size={36} weight="duotone" className="text-[#044396]" />,
+    icon: <Graph size={36} weight="duotone" />,
   },
   {
     title: "Robotics & Auto",
     description: "Firms: Connecting automation experts. Talent: Powering manufacturing giants.",
-    icon: <Cpu size={36} weight="duotone" className="text-[#044396]" />,
+    icon: <Cpu size={36} weight="duotone" />,
   },
   {
     title: "Marketing & Growth",
     description: "Firms: Building brand teams. Talent: High-scale execution roles.",
-    icon: <Megaphone size={36} weight="duotone" className="text-[#044396]" />,
+    icon: <Megaphone size={36} weight="duotone" />,
   },
   {
     title: "Supply Chain",
     description: "Firms: Optimization experts. Talent: Directing global operations.",
-    icon: <ShoppingCart size={36} weight="duotone" className="text-[#044396]" />,
+    icon: <ShoppingCart size={36} weight="duotone" />,
   },
 ];
 
@@ -104,39 +105,40 @@ const IndustriesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {industries.map((item, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="group relative bg-white/60 backdrop-blur-sm rounded-[2.5rem] p-8 md:p-12 border border-slate-100 hover:border-blue-200 transition-all duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(4,67,150,0.12)] overflow-hidden"
-            >
-              {/* Hover Glow Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <Link href="/under-construction" key={index} className="contents">
+              <motion.div
+                custom={index}
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group relative bg-white/60 backdrop-blur-sm rounded-[2.5rem] p-8 md:p-12 border border-slate-100 hover:border-blue-200 transition-all duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(4,67,150,0.12)] overflow-hidden"
+              >
+                {/* Hover Glow Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative z-10">
-                <div className="mb-10 w-20 h-20 flex items-center justify-center bg-white border border-slate-100 rounded-[1.5rem] group-hover:bg-[#044396] transition-all duration-500 shadow-sm group-hover:shadow-blue-900/20 group-hover:scale-110">
-                  <div className="text-[#044396] group-hover:text-white transition-colors duration-500">
-                    {React.cloneElement(item.icon as React.ReactElement<any>, { size: 32 })}
+                <div className="relative z-10">
+                  <div className="mb-10 w-20 h-20 flex items-center justify-center bg-white border border-slate-100 rounded-[1.5rem] group-hover:bg-[#044396] transition-all duration-500 shadow-sm group-hover:shadow-blue-900/20 group-hover:scale-110">
+                    <div className="text-[#044396] group-hover:text-white transition-colors duration-500">
+                      {React.cloneElement(item.icon as React.ReactElement<any>, { size: 32, className: "transition-colors duration-500" })}
+                    </div>
+                  </div>
+
+                  <h4 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-[#044396] transition-colors">{item.title}</h4>
+                  <p className="text-slate-500 leading-relaxed text-base font-medium group-hover:text-slate-700 transition-colors">{item.description}</p>
+
+                  <div className="mt-8 flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-[0.1em] text-[#044396] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                    <span>Explore Sector</span>
+                    <ArrowRight size={14} weight="bold" />
                   </div>
                 </div>
-
-                <h4 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-[#044396] transition-colors">{item.title}</h4>
-                <p className="text-slate-500 leading-relaxed text-base font-medium group-hover:text-slate-700 transition-colors">{item.description}</p>
-
-                <div className="mt-8 flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-[0.1em] text-[#044396] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                  <span>Explore Sector</span>
-                  <ArrowRight size={14} weight="bold" />
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

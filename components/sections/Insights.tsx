@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import React from "react";
 import Image from "next/image";
 import {
@@ -159,12 +160,16 @@ const InsightsSection: React.FC = () => {
                     </div>
                     <span className="text-[10px] font-black text-zinc-300 uppercase tracking-[0.3em] group-hover:text-black transition-colors">{post.author}</span>
                   </div>
-                  <motion.div
-                    whileHover={{ scale: 1.1, backgroundColor: "#044396", color: "#fff" }}
-                    className="p-4 rounded-full bg-zinc-50 text-zinc-400 transition-all duration-500 shadow-sm"
-                  >
-                    <ArrowRight size={24} weight="bold" />
-                  </motion.div>
+
+
+                  <Link href="/under-construction">
+                    <motion.div
+                      whileHover={{ scale: 1.1, backgroundColor: "#044396", color: "#fff" }}
+                      className="p-4 rounded-full bg-zinc-50 text-zinc-400 transition-all duration-500 shadow-sm"
+                    >
+                      <ArrowRight size={24} weight="bold" />
+                    </motion.div>
+                  </Link>
                 </div>
               </div>
             </motion.article>

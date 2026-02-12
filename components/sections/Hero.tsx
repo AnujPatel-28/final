@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
+import Link from 'next/link';
 import { motion, Variants, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Sparkle, Target, Cpu } from 'phosphor-react';
 import HeroBackground from './HeroBackground';
@@ -100,30 +101,36 @@ export default function HeroContextSection() {
               <span className="text-slate-900 font-semibold">high-performance talent</span> with <span className="text-slate-900 font-semibold">world-class innovators</span>.
             </motion.p>
 
+
+
             {/* Magnetic Buttons */}
             <motion.div
               variants={itemVariants}
               className="mt-12 flex flex-col sm:flex-row gap-5 items-center justify-center p-1"
             >
               <Magnetic>
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative bg-[#044396] text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest shadow-[0_10px_40px_rgba(4,67,150,0.3)] hover:shadow-[0_20px_40px_rgba(4,67,150,0.2)] transition-all duration-300 overflow-hidden flex items-center gap-3"
-                >
-                  <span className="relative z-10">Start Hiring</span>
-                  <Cpu size={18} weight="bold" className="relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-white/10 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300" />
-                </motion.button>
+                <Link href="/under-construction">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative bg-[#044396] text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest shadow-[0_10px_40px_rgba(4,67,150,0.3)] hover:shadow-[0_20px_40px_rgba(4,67,150,0.2)] transition-all duration-300 overflow-hidden flex items-center gap-3"
+                  >
+                    <span className="relative z-10">Start Hiring</span>
+                    <Cpu size={18} weight="bold" className="relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-white/10 translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300" />
+                  </motion.button>
+                </Link>
               </Magnetic>
 
               <Magnetic>
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:border-[#044396]/30 hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3"
-                >
-                  <span className="relative z-10">Find Work</span>
-                  <Target size={18} weight="bold" className="text-[#044396] group-hover:scale-110 transition-transform duration-300" />
-                </motion.button>
+                <Link href="/under-construction">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:border-[#044396]/30 hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3"
+                  >
+                    <span className="relative z-10">Find Work</span>
+                    <Target size={18} weight="bold" className="text-[#044396] group-hover:scale-110 transition-transform duration-300" />
+                  </motion.button>
+                </Link>
               </Magnetic>
             </motion.div>
 

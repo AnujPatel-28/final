@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Broadcast, RocketLaunch } from 'phosphor-react';
 import { motion } from "framer-motion";
 
@@ -41,22 +42,26 @@ export default function CTASection() {
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
-                        <motion.button
-                            whileHover={{ y: -8, scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="group flex items-center gap-6 bg-[#044396] px-14 py-7 rounded-2xl text-white font-black font-mono text-[13px] uppercase tracking-[0.3em] transition-all shadow-[0_30px_60px_rgba(4,67,150,0.3)] hover:shadow-none"
-                        >
-                            Start Hiring
-                            <RocketLaunch size={24} weight="bold" className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
-                        </motion.button>
+                        <Link href="/under-construction">
+                            <motion.button
+                                whileHover={{ y: -8, scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="group flex items-center gap-6 bg-[#044396] px-14 py-7 rounded-2xl text-white font-black font-mono text-[13px] uppercase tracking-[0.3em] transition-all shadow-[0_30px_60px_rgba(4,67,150,0.3)] hover:shadow-none"
+                            >
+                                Start Hiring
+                                <RocketLaunch size={24} weight="bold" className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                            </motion.button>
+                        </Link>
 
-                        <motion.button
-                            whileHover={{ x: 5 }}
-                            className="flex items-center gap-4 text-[#000000]/50 hover:text-[#044396] font-black font-mono text-sm uppercase tracking-[0.3em] transition-all"
-                        >
-                            Connect With Us
-                            <ArrowRight size={20} weight="bold" />
-                        </motion.button>
+                        <Link href="/under-construction">
+                            <motion.button
+                                whileHover={{ x: 5 }}
+                                className="flex items-center gap-4 text-[#000000]/50 hover:text-[#044396] font-black font-mono text-sm uppercase tracking-[0.3em] transition-all"
+                            >
+                                Connect With Us
+                                <ArrowRight size={20} weight="bold" />
+                            </motion.button>
+                        </Link>
                     </div>
                 </motion.div>
             </div>

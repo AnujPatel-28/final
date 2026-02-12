@@ -37,7 +37,7 @@ const Navbar = () => {
         { name: 'About Us', href: '#about', description: 'Our mission & team' },
       ]
     },
-    { name: 'Connect', href: '#contact' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   // Prevent hydration mismatch by not rendering dynamic styles until mounted
