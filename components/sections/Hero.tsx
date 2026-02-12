@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, Variants, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Sparkle, Target, Cpu } from 'phosphor-react';
@@ -8,6 +8,22 @@ import HeroBackground from './HeroBackground';
 import Magnetic from '../ui/Magnetic';
 
 export default function HeroContextSection() {
+  // Ensure page starts at top on reload
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    // handle potential browser scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    return () => {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'auto';
+      }
+    };
+  }, []);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {

@@ -46,13 +46,10 @@ export default function Home() {
       {/* 9. Social Proof: Testimonials */}
       <TestimonialsSection />
 
-      {/* 10. Call to Action */}
-      <CTASection />
-
-      {/* 11. Contact Form */}
+      {/* 10. Contact Form */}
       <ContactSection />
 
-      {/* 12. Footer */}
+      {/* 11. Footer */}
       <Footer />
 
     </main>

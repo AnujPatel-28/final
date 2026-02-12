@@ -42,7 +42,7 @@ export default function IntegrationsSection() {
   return (
     <section
       id="how-it-works"
-      className="relative w-full overflow-hidden py-16 md:py-32 min-h-screen flex items-center bg-white scroll-mt-24"
+      className="relative w-full overflow-hidden py-12 md:py-20 min-h-screen flex items-center bg-white scroll-mt-24"
     >
       <GridPattern opacity={0.4} />
 
@@ -81,7 +81,7 @@ export default function IntegrationsSection() {
               Ecosystem.
             </h2>
 
-            <p className="max-w-2xl text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-20">
+            <p className="max-w-2xl text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12">
               A deeply integrated approach bridging the gap between talent and opportunity. We orchestrate complex workflows for <span className="text-slate-900 font-bold underline decoration-[#044396] decoration-4 underline-offset-8">Targeted Sourcing</span> & <span className="text-slate-900 font-bold underline decoration-[#044396] decoration-4 underline-offset-8">Career Trajectories</span>.
             </p>
 

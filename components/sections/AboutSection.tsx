@@ -32,7 +32,7 @@ const features = [
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-white overflow-hidden relative">
+    <section id="about" className="py-16 lg:py-24 bg-white overflow-hidden relative">
       {/* Background Ambience - Lighter for Clean Theme */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/40 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50/40 rounded-full blur-[120px] pointer-events-none" />

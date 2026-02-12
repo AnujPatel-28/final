@@ -12,7 +12,7 @@ export default function CTASection() {
 
     return (
         <section
-            className="py-20 md:py-80 relative overflow-hidden bg-white flex items-center justify-center"
+            className="py-16 md:py-32 relative overflow-hidden bg-white flex items-center justify-center"
         >
             {/* Background Ambience */}
             <GridPattern opacity={0.5} />
@@ -27,17 +27,17 @@ export default function CTASection() {
                     viewport={{ once: true }}
                     className="flex flex-col items-center"
                 >
-                    <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-[#044396]/10 bg-white text-[#044396] text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-12 shadow-2xl backdrop-blur-sm">
+                    <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-[#044396]/10 bg-white text-[#044396] text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8 shadow-2xl backdrop-blur-sm">
                         <Broadcast size={16} weight="bold" className="animate-pulse" />
                         Next Steps
                     </div>
 
-                    <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-tight tracking-tight mb-16">
+                    <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-tight tracking-tight mb-10">
                         Scale Your <br />
                         <span className="text-[#044396]">Vision.</span>
                     </h2>
 
-                    <p className="text-xl md:text-2xl text-slate-700 max-w-2xl mx-auto font-medium leading-relaxed mb-24">
+                    <p className="text-xl md:text-2xl text-slate-700 max-w-2xl mx-auto font-medium leading-relaxed mb-12">
                         Exceptional <span className="text-slate-900 font-bold">Candidates</span>. Visionary <span className="text-slate-900 font-bold">Partners</span>. <br className="hidden sm:block" /> One cohesive ecosystem.
                     </p>
 

@@ -76,7 +76,7 @@ const IndustriesSection = () => {
 
   return (
     <section
-      className="py-16 md:py-32 relative overflow-hidden min-h-screen flex flex-col justify-center bg-white scroll-mt-24"
+      className="py-12 md:py-20 relative overflow-hidden min-h-screen flex flex-col justify-center bg-white scroll-mt-24"
       id="industries"
     >
       {/* Background Ambience */}
@@ -86,7 +86,7 @@ const IndustriesSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         <motion.div
-          className="text-center mb-20 md:mb-40"
+          className="text-center mb-12 md:mb-20"
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"

@@ -50,7 +50,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-20 md:py-32 relative overflow-hidden flex flex-col justify-center bg-zinc-50/30 scroll-mt-24"
+      className="py-16 md:py-24 relative overflow-hidden flex flex-col justify-center bg-zinc-50/30 scroll-mt-24"
     >
       <GridPattern opacity={0.3} />
 
@@ -65,12 +65,12 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-slate-200 bg-white text-slate-900 text-[11px] font-mono font-black uppercase tracking-[0.2em] mb-12 shadow-sm backdrop-blur-sm">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-slate-200 bg-white text-slate-900 text-[11px] font-mono font-black uppercase tracking-[0.2em] mb-8 shadow-sm backdrop-blur-sm">
               <Globe size={18} weight="bold" className="text-slate-400" />
               Get in Touch
             </div>
 
-            <h3 className="text-4xl sm:text-6xl md:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-12 md:mb-16">
+            <h3 className="text-4xl sm:text-6xl md:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-8 md:mb-12">
               Talk <br />
               <span className="text-slate-500">Talent.</span>
             </h3>

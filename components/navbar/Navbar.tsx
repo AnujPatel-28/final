@@ -70,7 +70,16 @@ const Navbar = () => {
           >
 
             {/* Logo + Name */}
-            <Link href="/" className="flex items-center gap-2 group">
+            <Link
+              href="/"
+              className="flex items-center gap-2 group"
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+            >
               <div className="relative h-14 w-auto">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img

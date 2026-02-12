@@ -162,11 +162,11 @@ const Footer = () => {
                                 <input
                                     type="email"
                                     placeholder="your-neural-endpoint@link.ai"
-                                    className="w-full bg-white rounded-3xl py-5 md:py-7 pl-16 pr-8 text-sm font-bold font-mono border border-zinc-100 outline-none focus:border-[#044396] transition-all shadow-sm"
+                                    className="w-full bg-white rounded-3xl py-5 md:py-7 pl-16 pr-8 text-sm font-bold font-mono text-slate-900 border border-zinc-100 outline-none focus:border-[#044396] transition-all shadow-sm"
                                 />
                             </div>
                             <Link href="/under-construction" className="w-full">
-                                <button className="w-full bg-slate-900 text-white py-5 md:py-7 rounded-3xl text-[10px] md:text-[11px] font-black font-mono uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-[#044396] transition-all shadow-xl hover:shadow-[#044396]/20">
+                                <button className="w-full bg-slate-900 text-white py-5 md:py-7 rounded-3xl text-[12px] md:text-[14px] font-black font-mono uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-[#044396] transition-all shadow-xl hover:shadow-[#044396]/20">
                                     Initialize Connection
                                     <ArrowRight weight="bold" />
                                 </button>
@@ -192,7 +192,7 @@ const Footer = () => {
 
                     {footerLinks.map((section) => (
                         <div key={section.title} className="space-y-6 md:space-y-10">
-                            <h5 className="text-[11px] font-black font-mono text-slate-900 uppercase tracking-[0.4em] flex items-center gap-4">
+                            <h5 className="text-[18px] font-black font-mono text-slate-900 uppercase tracking-[0.4em] flex items-center gap-4">
                                 <span className="w-2 h-2 rounded-full bg-[#044396]" />
                                 {section.title}
                             </h5>
@@ -212,7 +212,7 @@ const Footer = () => {
                         </div>
                     ))}
                 </div>
-                e
+
                 {/* Bottom Section: Dashboard Meta */}
                 <div className="pt-12 md:pt-16 border-t border-zinc-100 flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12">
                     <div className="flex flex-col md:flex-row items-center">

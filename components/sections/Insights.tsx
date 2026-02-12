@@ -88,7 +88,7 @@ const InsightsSection: React.FC = () => {
   return (
     <section
       id="insights"
-      className="relative overflow-hidden py-16 md:py-32 min-h-screen flex flex-col justify-center bg-white scroll-mt-24"
+      className="relative overflow-hidden py-12 md:py-20 min-h-screen flex flex-col justify-center bg-white scroll-mt-24"
     >
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
@@ -97,7 +97,7 @@ const InsightsSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-20 md:mb-40 max-w-4xl"
+          className="mb-12 md:mb-20 max-w-4xl"
         >
           <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-[#044396]/10 bg-[#044396]/5 text-[#044396] text-[11px] font-bold uppercase tracking-[0.2em] mb-12 backdrop-blur-sm">
             <Scroll size={18} weight="bold" className="animate-pulse" />
