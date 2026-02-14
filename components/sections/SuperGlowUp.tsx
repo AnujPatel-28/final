@@ -38,7 +38,7 @@ const SuperGlowUp = () => {
   const bgGradient = useTransform(
     scrollYProgress,
     [0.6, 0.9],
-    ["linear-gradient(to bottom, #000000, #0a0a0a)", "linear-gradient(to bottom, #020617, #0f172a)"]
+    ["linear-gradient(to bottom, #000000, #0a0a0a)", "linear-gradient(to bottom, #020617ff, #131b8aff)"]
   );
 
   return (
@@ -103,6 +103,14 @@ const SuperGlowUp = () => {
               {/* Glow behind text */}
               <div className="absolute inset-0 bg-blue-600/30 blur-[100px] rounded-full" />
 
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="relative z-10 text-xs md:text-sm font-semibold font-bold tracking-[0.3em] text-blue-400 uppercase mb-4 md:mb-6"
+              >
+                Coming Soon
+              </motion.div>
               <motion.h1 className="relative z-10 text-6xl md:text-9xl font-black tracking-tighter text-white drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]">
                 TalentMesh
               </motion.h1>

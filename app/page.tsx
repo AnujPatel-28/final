@@ -12,6 +12,7 @@ import MergedAboutStats from "@/components/sections/MergedAboutStats";
 
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/sections/AboutSection";
+import ProcessPipeline from "@/components/sections/ProcessPipeline";
 
 export default function Home() {
   return (
@@ -24,24 +25,21 @@ export default function Home() {
 
       {/* 2. Social Proof: Trusted Tech */}
       {/* <PoweredBy /> */} {/* Hidden - can be re-enabled if needed */}
-
-      {/* 3. Problem/Solution: The "Glow Up" */}
       <SuperGlowUp />
-
+      {/* 3. Problem/Solution: The "Glow Up" */}
+      {/*<SuperGlowUp />*/}
+      <MergedAboutStats />     
 
       {/* 4. Statistics & Deeper Dive: About Us */}
       <AboutSection />
-      <MergedAboutStats />
-
+      <ProcessPipeline />
+      {/* 8. Use Cases: Industries */}
+      <IndustriesSection />
 
       {/* 6. Insights/Features */}
       <InsightsSection />
-
-      {/* 7. Process: How It Works */}
-      <HowItWorks />
-
-      {/* 8. Use Cases: Industries */}
-      <IndustriesSection />
+      
+     
 
       {/* 9. Social Proof: Testimonials */}
       <TestimonialsSection />

@@ -71,10 +71,11 @@ export default function HeroContextSection() {
     <section
       id="hero"
       onMouseMove={handleMouseMove}
-      className="relative min-h-auto md:min-h-[95vh] w-full flex items-center justify-center pt-20 md:pt-32 pb-8 md:pb-16 overflow-hidden bg-white selection:bg-[#044396]/20 bg-slate-50"
+      className="relative min-h-auto md:min-h-[85vh] w-full flex items-center justify-center pt-16 md:pt-24 pb-8 md:pb-12 overflow-hidden bg-white selection:bg-[#044396]/20 bg-slate-50"
     >
 
       <HeroBackground />
+
 
       <div className="max-w-7xl mx-auto mt-25 px-6 relative z-10 w-full perspective-[1000px]">
         <motion.div
@@ -101,7 +102,7 @@ export default function HeroContextSection() {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-3xl sm:text-7xl md:text-8xl lg:text-9xl font-sans font-extrabold text-slate-900 tracking-tighter leading-[0.9] mb-8 drop-shadow-sm"
+              className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-sans font-extrabold text-slate-900 tracking-tighter leading-[0.9] mb-6 sm:mb-8 drop-shadow-sm"
             >
               Beyond Resumes. <br />
               <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#044396] via-[#2563eb] to-[#044396] bg-[length:200%_auto] animate-gradient-x">
@@ -111,10 +112,9 @@ export default function HeroContextSection() {
 
             <motion.p
               variants={itemVariants}
-              className="mt-6 max-w-3xl text-lg sm:text-xl md:text-2xl text-slate-600 font-medium leading-relaxed tracking-tight"
+              className="mt-4 sm:mt-6 max-w-md sm:max-w-3xl md:max-w-5xl text-lg sm:text-xl md:text-2xl text-slate-600 font-medium leading-relaxed tracking-tight px-4 sm:px-0"
             >
-              The premier staffing partner connecting <br className="hidden sm:block" />
-              <span className="text-slate-900 font-semibold">high-performance talent</span> with <span className="text-slate-900 font-semibold">world-class innovators</span>.
+              We bridge the gap between visionary companies and the <span className="text-slate-900 font-bold">1% of technical talent</span>.
             </motion.p>
 
 
@@ -122,13 +122,13 @@ export default function HeroContextSection() {
             {/* Magnetic Buttons */}
             <motion.div
               variants={itemVariants}
-              className="mt-12 flex flex-col sm:flex-row gap-5 items-center justify-center p-1"
+              className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-5 items-center justify-center p-1"
             >
               <Magnetic>
                 <Link href="/under-construction">
                   <motion.button
                     whileTap={{ scale: 0.95 }}
-                    className="group relative bg-[#044396] text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest shadow-[0_10px_40px_rgba(4,67,150,0.3)] hover:shadow-[0_20px_40px_rgba(4,67,150,0.2)] transition-all duration-300 overflow-hidden flex items-center gap-3"
+                    className="group relative bg-[#044396] text-white px-6 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-widest shadow-[0_10px_40px_rgba(4,67,150,0.3)] hover:shadow-[0_20px_40px_rgba(4,67,150,0.2)] transition-all duration-300 overflow-hidden flex items-center gap-3"
                   >
                     <span className="relative z-10">Start Hiring</span>
                     <Cpu size={18} weight="bold" className="relative z-10 group-hover:rotate-12 transition-transform duration-300" />
@@ -141,7 +141,7 @@ export default function HeroContextSection() {
                 <Link href="/under-construction">
                   <motion.button
                     whileTap={{ scale: 0.95 }}
-                    className="group relative bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:border-[#044396]/30 hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3"
+                    className="group relative bg-white text-slate-900 border border-slate-200 px-6 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-widest hover:border-[#044396]/30 hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3"
                   >
                     <span className="relative z-10">Find Work</span>
                     <Target size={18} weight="bold" className="text-[#044396] group-hover:scale-110 transition-transform duration-300" />
@@ -170,7 +170,7 @@ export default function HeroContextSection() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
               <img
-                src="/logo-removebg-preview.png"
+                src="/TalentMesh_page-0002-removebg-preview.png"
                 alt="TalentMesh Symbol"
                 className="w-84 h-84 md:w-126 md:h-126 object-contain opacity-90 group-hover/logo:opacity-100 group-hover/logo:scale-105 transition-all duration-500 ease-in-out drop-shadow-2xl"
               />

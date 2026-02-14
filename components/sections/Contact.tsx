@@ -17,8 +17,9 @@ const ContactSection = () => {
   const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setFormStatus("idle");
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
@@ -36,15 +37,38 @@ const ContactSection = () => {
       return;
     }
 
-    // Clear errors and show success
-    setErrors({});
-    setFormStatus("success");
+    try {
+      setFormStatus("idle"); // or "submitting" if you add that state
+      // Use Web3Forms for no-backend email submission
+      // Replace ACCESS_KEY with your actual access key from web3forms.com
+      formData.append("access_key", "5374e5fa-7437-4159-b648-51b482d71e69");
 
-    // Reset form after 3 seconds
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setErrors({});
+        setFormStatus("success");
+        e.currentTarget.reset();
+      } else {
+        console.error("Submission failed", result);
+        setFormStatus("error");
+        setErrors({ form: "Something went wrong. Please try again later." });
+      }
+    } catch (error) {
+      console.error("Submission error", error);
+      setFormStatus("error");
+      setErrors({ form: "Network error. Please try again later." });
+    }
+
+    // Reset form status after 5 seconds
     setTimeout(() => {
       setFormStatus("idle");
-      e.currentTarget.reset();
-    }, 3000);
+    }, 5000);
   };
 
   return (
@@ -71,8 +95,8 @@ const ContactSection = () => {
             </div>
 
             <h3 className="text-4xl sm:text-6xl md:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-8 md:mb-12">
-              Talk <br />
-              <span className="text-[#044396]g">Talent.</span>
+              Talk
+              <span className="text-[#044396]g bg-gradient-to-r from-[#044396] to-[#044396] bg-clip-text text-transparent">Talent.</span>
             </h3>
 
             <div className="space-y-8 md:space-y-12">
@@ -178,7 +202,7 @@ const ContactSection = () => {
                 whileTap={{ scale: 0.99 }}
                 type="submit"
                 disabled={formStatus === "success"}
-                className="w-full bg-slate-900 text-white font-black font-mono py-5 rounded-none shadow-lg hover:shadow-none flex items-center justify-center gap-4 uppercase tracking-[0.3em] transition-all text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#044396] text-white font-bold font-mono py-5 rounded-none shadow-[0_10px_40px_rgba(4,67,150,0.3)] hover:shadow-[0_20px_40px_rgba(4,67,150,0.2)] flex items-center justify-center gap-4 uppercase tracking-[0.3em] transition-all text-xs disabled:opacity-50 disabled:cursor-not-allowed group"
               >
                 {formStatus === "success" ? "Message Sent!" : "Send Message"}
                 <PaperPlaneTilt size={18} weight="bold" />

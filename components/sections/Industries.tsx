@@ -111,8 +111,8 @@ const IndustriesSection = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}
-                className="group relative bg-white/60 backdrop-blur-sm p-8 border border-slate-100/50 hover:z-10 transition-all duration-300"
+                whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.9)", y: -5 }}
+                className="group relative bg-white/60 backdrop-blur-sm p-8 border border-slate-100/50 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
               >
                 {/* Hover Glow Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

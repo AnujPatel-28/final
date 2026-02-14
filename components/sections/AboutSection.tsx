@@ -11,6 +11,7 @@ import {
   ArrowRight
 } from "phosphor-react";
 import { motion } from "framer-motion";
+import GridPattern from "../ui/GridPattern";
 
 const features = [
   {
@@ -32,13 +33,15 @@ const features = [
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-16 lg:py-24 bg-white overflow-hidden relative">
+    <section id="about" className="py-8 lg:py-12 bg-white overflow-hidden relative">
+      {/* Background Grid */}
+      <GridPattern opacity={0.4} />
       {/* Background Ambience - Lighter for Clean Theme */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/40 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50/40 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Image Composition */}
           <motion.div
@@ -53,7 +56,7 @@ const AboutSection: React.FC = () => {
 
             {/* Main Image Container */}
             <div className="relative rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.08)] border-8 border-white group">
-              <div className="aspect-[4/5] bg-slate-50 relative">
+              <div className="aspect-[4/3] bg-slate-50 relative">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="TalentMesh Team"
@@ -91,40 +94,45 @@ const AboutSection: React.FC = () => {
               viewport={{ once: true }}
             >
               {/* Badge */}
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#044396]/10 bg-[#044396]/5 text-[#044396] text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-10 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full border border-[#044396]/10 bg-[#044396]/5 text-[#044396] text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-4 backdrop-blur-sm">
                 The Architecture
               </div>
 
               {/* Heading */}
-              <h2 className="text-5xl md:text-7xl font-bold text-slate-900 mb-10 leading-tight tracking-tight">
-                Bridging <br />
-                <span className="text-[#044396]">Potential.</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">
+                Bridging  <span className="text-[#044396]">Potential.</span>
               </h2>
 
-              <p className="text-xl text-slate-600 mb-12 leading-relaxed font-medium max-w-xl">
+              <p className="text-base text-slate-600 mb-6 leading-loose font-medium max-w-xl">
                 We don't just fill roles. We engineer the neural connections between elite talent and game-changing visionaries.
               </p>
             </motion.div>
 
             {/* Feature List (Cards) */}
-            <div className="space-y-6 mb-16">
+            {/* Feature List (Cards - Seamless Grid Layout) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-8 border border-slate-100 rounded-[2rem] overflow-hidden shadow-sm bg-slate-50/50">
               {features.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="flex gap-6 items-center group p-6 rounded-[2rem] bg-white border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(4,67,150,0.08)] hover:border-blue-100 transition-all duration-300"
+                  className="group relative overflow-hidden p-5 bg-white/60 backdrop-blur-sm border border-slate-100/50 -ml-[1px] -mt-[1px] hover:z-10 hover:shadow-lg hover:border-blue-200 transition-all duration-300 flex flex-col h-full items-start"
                 >
-                  <div className="flex-shrink-0 w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center group-hover:bg-[#044396] transition-all duration-500 shadow-inner group-hover:shadow-lg">
-                    <div className="text-[#044396] group-hover:text-white transition-colors duration-300">
-                      {React.cloneElement(item.icon as React.ReactElement<any>, { className: "transition-colors duration-300" })}
+                  {/* Hover Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  <div className="relative z-10 flex flex-col items-start w-full h-full">
+                    <div className="mb-4 flex-shrink-0 w-12 h-12 bg-white border border-slate-100 rounded-xl flex items-center justify-center group-hover:bg-[#044396] transition-all duration-500 shadow-sm group-hover:shadow-blue-900/20 group-hover:scale-110">
+                      <div className="text-[#044396] group-hover:text-white transition-colors duration-500">
+                        {React.cloneElement(item.icon as React.ReactElement<any>, { size: 22, className: "transition-colors duration-500" })}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-[#044396] transition-colors">{item.title}</h4>
-                    <p className="text-slate-500 mt-1 font-medium leading-relaxed">{item.description}</p>
+                    <div>
+                      <h4 className="text-base font-bold text-slate-900 tracking-tight group-hover:text-[#044396] transition-colors mb-2">{item.title}</h4>
+                      <p className="text-slate-500 font-medium leading-relaxed text-[13px]">{item.description}</p>
+                    </div>
                   </div>
                 </motion.div>
               ))}

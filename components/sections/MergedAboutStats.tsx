@@ -101,7 +101,7 @@ export default function MergedAboutStats() {
     // Base Text: Blue-300 -> White
     const col1 = useTransform(scrollYProgress, [0.1, 0.2], ["#267fe4ff", "#ffffff"]);
     // Highlight: White -> Blue-200
-    const col1Highlight = useTransform(scrollYProgress, [0.1, 0.2], ["#ffffff", "#bfdbfe"]);
+    const col1Highlight = useTransform(scrollYProgress, [0.1, 0.2], ["#ffffff", "c"]);
 
     // 2. TEXT 2 ("Beyond Algorithms")
     const op2 = useTransform(scrollYProgress, [0.3, 0.4, 0.45, 0.55], [0, 1, 1, 0]);
@@ -176,27 +176,25 @@ export default function MergedAboutStats() {
                             <div className="max-w-7xl mx-auto px-4 w-full">
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                     {stats.map((stat) => (
-                                        <div key={stat.id} className="relative group p-8 rounded-3xl border border-slate-100 bg-white/50 backdrop-blur-sm hover:border-blue-200 hover:shadow-[0_20px_40px_rgba(37,99,235,0.08)] transition-all duration-300 overflow-hidden">
-                                            {/* Hover Glow */}
-                                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div key={stat.id} className="group relative p-6 rounded-[2rem] bg-white/60 backdrop-blur-sm border border-slate-100/50 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden text-center flex flex-col items-center">
+                                            {/* Hover Gradient */}
+                                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                                            <div className="relative z-10 flex flex-col items-center">
-                                                {/* Icon Bubble */}
-                                                <div className="mb-6 bg-slate-50 p-4 rounded-2xl shadow-sm ring-1 ring-slate-100 group-hover:bg-[#044396] group-hover:ring-[#044396] transition-all duration-300">
+                                            <div className="relative z-10 flex flex-col items-center w-full">
+                                                {/* Icon Box */}
+                                                <div className="mb-4 w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center group-hover:bg-[#044396] transition-all duration-500 shadow-sm group-hover:shadow-blue-900/20 group-hover:scale-110">
                                                     {React.cloneElement(stat.icon as React.ReactElement, {
-                                                        className: "w-6 h-6 text-slate-600 group-hover:text-white transition-colors duration-300"
+                                                        className: "w-8 h-8 text-[#044396] group-hover:text-white transition-colors duration-500"
                                                     } as React.SVGProps<SVGSVGElement>)}
                                                 </div>
 
-                                                <div className="text-4xl md:text-5xl font-mono font-bold text-slate-900 tracking-tighter mb-3">
+                                                <div className="text-4xl md:text-5xl font-mono font-bold text-slate-900 tracking-tighter mb-2">
                                                     <Counter end={stat.value} suffix={stat.suffix} />
                                                 </div>
 
-                                                <div className="flex items-center gap-2">
-                                                    <p className="text-slate-500 text-xs font-mono font-bold uppercase tracking-[0.2em] group-hover:text-[#044396] transition-colors">
-                                                        {stat.label}
-                                                    </p>
-                                                </div>
+                                                <p className="text-slate-500 text-sm font-medium uppercase tracking-wide group-hover:text-[#044396] transition-colors">
+                                                    {stat.label}
+                                                </p>
                                             </div>
                                         </div>
                                     ))}

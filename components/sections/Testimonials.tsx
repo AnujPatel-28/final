@@ -8,20 +8,20 @@ import GridPattern from '../ui/GridPattern';
 
 const testimonials = [
     {
-        name: "Marcus Aurelius",
-        role: "Architecture Lead // Employer",
-        testimonial: "TalentMesh understood our cultural needs instantly. They found architects that weren't just skilled, but perfectly aligned with our vision.",
+        name: "Sarah Chen",
+        role: "VP of Engineering, FinTech Global",
+        testimonial: "TalentMesh didn't just send us resumes; they understood our architectural needs. The candidates were pre-vetted to an extent I've never seen before."
     },
     {
-        name: "Lyra Belacqua",
-        role: "DevOps Engineer // Candidate",
-        testimonial: "They didn't just find me a job; they accelerated my trajectory with a firm that genuinely shares my mission and values.",
+        name: "James Wilson",
+        role: "CTO, Nexus Dynamics",
+        testimonial: "The speed and precision are unmatched. We filled three critical senior roles in under two weeks. Their understanding of the tech landscape is profound."
     },
     {
-        name: "Soren Kierkegaard",
-        role: "Ops Director // Employer",
-        testimonial: "Removing the guesswork from scaling. Their vetted pipeline saved us months of screening time for our high-intensity team.",
-    },
+        name: "Elena Rodriguez",
+        role: "Head of Talent, BioSynth Labs",
+        testimonial: "A true partner in our growth. Their ecosystem approach allowed us to scale our R&D team with specialists who were cultural fits from day one."
+    }
 ];
 
 export default function TestimonialsSection() {
@@ -69,11 +69,11 @@ export default function TestimonialsSection() {
                                 damping: 15
                             }}
                             viewport={{ once: true }}
-                            whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}
-                            className="p-6 md:p-8 bg-white/60 backdrop-blur-sm border border-slate-100/50 hover:z-10 transition-all duration-300 group flex flex-col justify-between h-full relative overflow-hidden"
+                            whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.9)", y: -5 }}
+                            className="p-6 md:p-8 bg-white/60 backdrop-blur-sm border border-slate-100/50 hover:border-blue-200 hover:shadow-lg hover:z-10 transition-all duration-300 group flex flex-col justify-between h-full relative overflow-hidden"
                         >
                             {/* Hover Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                             <div className="relative z-10">
                                 <div className="mb-8 flex justify-between items-start">
@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
                                         ))}
                                     </div>
                                 </div>
-                                <p className="text-slate-900 mb-8 text-base font-bold leading-relaxed tracking-tight group-hover:text-[#044396] transition-colors">
+                                <p className="text-slate-900 mb-8 text-base font-bold leading-loose tracking-tight group-hover:text-[#044396] transition-colors">
                                     &ldquo;{client.testimonial}&rdquo;
                                 </p>
                             </div>

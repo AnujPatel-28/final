@@ -127,10 +127,13 @@ const InsightsSection: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              whileHover={{ y: -15 }}
-              className="bg-white rounded-[2rem] md:rounded-[4rem] overflow-hidden border border-zinc-100 hover:border-[#044396]/20 transition-all duration-700 group shadow-[0_30px_60px_rgba(0,0,0,0.03)] hover:shadow-[0_50px_100px_rgba(4,67,150,0.08)] flex flex-col h-full"
+              whileHover={{ y: -5 }}
+              className="group relative bg-white/60 backdrop-blur-sm border border-slate-100/50 hover:border-blue-200 transition-all duration-300 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-lg flex flex-col h-full"
             >
-              <div className="relative h-60 md:h-72 overflow-hidden">
+              {/* Hover Glow Gradient matching Industries.tsx */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+
+              <div className="relative h-60 md:h-72 overflow-hidden z-10">
                 <Image
                   src={post.imageUrl}
                   alt={post.title}
@@ -143,7 +146,7 @@ const InsightsSection: React.FC = () => {
                 </span>
               </div>
 
-              <div className="p-8 md:p-12 flex-1 flex flex-col justify-between">
+              <div className="p-8 md:p-12 flex-1 flex flex-col justify-between relative z-10">
                 <div>
                   <h4 className="text-2xl font-bold text-slate-900 mb-6 leading-tight tracking-tight group-hover:text-[#044396] transition-colors">
                     {post.title}
