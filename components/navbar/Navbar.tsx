@@ -88,19 +88,19 @@ const Navbar = () => {
                   }
                 }}
               >
-                <div className="relative h-24 md:h-28 lg:h-32 -my-5 md:-my-6 w-auto">
+                <div className="relative h-10 md:h-12 w-[140px] md:w-[180px] flex items-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/TalentMesh_page-0002-removebg-preview.png"
                     alt="TalentMesh Solutions"
-                    className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="absolute top-1/2 left-0 -translate-y-1/2 h-14 md:h-15 w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               </Link>
             </div>
 
             {/* Center Section: Desktop Nav */}
-            <div className="hidden lg:flex items-center justify-center gap-8 lg:gap-10">
+            <div className="hidden lg:flex items-center justify-center gap-8 lg:gap-0">
               {navLinks.map((link) => (
                 <div key={link.name} className="relative group">
                   <Link
@@ -138,17 +138,17 @@ const Navbar = () => {
             {/* Right Section: Action Buttons */}
             <div className="flex-1 flex justify-end items-center gap-4 md:gap-6">
               <div className="hidden sm:flex items-center gap-6 md:gap-8">
-                <button className="flex items-center gap-2 group transition-all py-1">
+                <Link href="/under-construction" className="flex items-center gap-2 group transition-all py-1">
                   <UserCircleGear size={18} weight="bold" className="text-slate-400 group-hover:text-slate-900 transition-colors" />
                   <span className={`text-xs font-mono uppercase tracking-[0.2em] transition-colors ${isScrolled ? 'text-slate-900 group-hover:text-slate-500' : 'text-slate-700 group-hover:text-slate-900'}`}>Candidates</span>
-                </button>
-                <button className="flex items-center gap-2 group transition-all py-1">
+                </Link>
+                <Link href="/under-construction" className="flex items-center gap-2 group transition-all py-1">
                   <Buildings size={18} weight="bold" className="text-slate-400 group-hover:text-slate-900 transition-colors" />
                   <span className={`text-xs font-mono uppercase tracking-[0.2em] transition-colors ${isScrolled ? 'text-slate-900 group-hover:text-slate-500' : 'text-slate-700 group-hover:text-slate-900'}`}>Employers</span>
-                </button>
+                </Link>
               </div>
 
-              <Link href="#contact" className="hidden md:flex items-center gap-3 bg-slate-900 text-white px-6 py-2.5 md:px-8 md:py-3 rounded-full text-xs font-mono uppercase tracking-[0.2em] hover:bg-slate-700 transition-all shadow-xl group overflow-hidden relative">
+              <Link href="#contact" className="hidden md:flex items-center gap-1 bg-slate-900 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-xs font-mono uppercase tracking-[0.2em] hover:bg-slate-700 transition-all shadow-xl group overflow-hidden relative">
                 <span className="relative z-10 font-black tracking-widest">Connect</span>
                 <LinkSimple size={20} weight="bold" className="relative z-10 group-hover:rotate-45 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -175,9 +175,9 @@ const Navbar = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -20 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:hidden fixed inset-x-4 top-32 z-50 pointer-events-auto"
+                className="lg:hidden fixed inset-x-4 top-24 z-50 pointer-events-auto"
               >
-                <div className="bg-white/80 backdrop-blur-3xl rounded-[2rem] p-8 shadow-[0_40px_100px_rgba(0,0,0,0.2)] border border-white/40 flex flex-col gap-8 w-full relative overflow-hidden">
+                <div className="bg-white/80 backdrop-blur-3xl rounded-[2rem] p-8 shadow-[0_40px_100px_rgba(0,0,0,0.2)] border border-white/40 flex flex-col gap-8 w-full relative overflow-y-auto max-h-[75vh]">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-blue-50/30 pointer-events-none" />
 
                   <div className="relative flex flex-col gap-2">
@@ -215,7 +215,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="relative flex flex-col gap-4">
-                    <button className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/50 transition-all text-left group border border-transparent hover:border-white/50">
+                    <Link href="/under-construction" onClick={() => setIsOpen(false)} className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/50 transition-all text-left group border border-transparent hover:border-white/50">
                       <div className="p-2 rounded-lg bg-slate-100 text-slate-500 group-hover:bg-[#044396] group-hover:text-white transition-colors shadow-sm">
                         <UserCircleGear size={20} weight="duotone" />
                       </div>
@@ -223,9 +223,9 @@ const Navbar = () => {
                         <span className="text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-[#044396] transition-colors">For Candidates</span>
                         <span className="text-[10px] text-slate-500">Browse jobs & create profile</span>
                       </div>
-                    </button>
+                    </Link>
 
-                    <button className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/50 transition-all text-left group border border-transparent hover:border-white/50">
+                    <Link href="/under-construction" onClick={() => setIsOpen(false)} className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/50 transition-all text-left group border border-transparent hover:border-white/50">
                       <div className="p-2 rounded-lg bg-slate-100 text-slate-500 group-hover:bg-[#044396] group-hover:text-white transition-colors shadow-sm">
                         <Buildings size={20} weight="duotone" />
                       </div>
@@ -233,13 +233,13 @@ const Navbar = () => {
                         <span className="text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-[#044396] transition-colors">For Employers</span>
                         <span className="text-[10px] text-slate-500">Hire top talent fast</span>
                       </div>
-                    </button>
+                    </Link>
                   </div>
 
                   <Link
                     href="#contact"
                     onClick={() => setIsOpen(false)}
-                    className="relative w-full bg-[#044396] text-white py-5 rounded-xl text-center shadow-lg shadow-blue-900/20 hover:shadow-xl hover:bg-blue-700 transition-all overflow-hidden group"
+                    className="relative w-full bg-[#044396] text-white py-6 rounded-xl text-center shadow-lg shadow-blue-900/20 hover:shadow-xl hover:bg-blue-700 transition-all overflow-hidden group"
                   >
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     <div className="relative flex items-center justify-center gap-3 font-bold tracking-widest text-xs uppercase">
